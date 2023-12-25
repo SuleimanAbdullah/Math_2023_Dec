@@ -11,6 +11,10 @@ public class MathThings : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (A == null || B == null)
+        {
+            return;
+        }
         Vector2 a = A.position;
         Vector2 b = B.position;
 
