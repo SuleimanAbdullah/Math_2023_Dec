@@ -5,32 +5,22 @@ using UnityEngine;
 public class Triggered : MonoBehaviour
 {
 
-    public Transform A;
-    public Transform B;
-    private float scProj;
+    public Transform enemy;
+
+    public float radius = 1f;
     private void OnDrawGizmos()
     {
-        if (A == null || B == null)
+        Vector3 barrelPos = transform.position;
+        if (enemy == null)
         {
             return;
         }
-        Vector2 a = A.position;
-        Vector2 b = B.position;
+        Vector3 enemyPos = enemy.position;
+        
+        float distance = Vector3.Distance(enemyPos, barrelPos);
 
-        Gizmos.color = Color.red;
-        Vector2 bNorm = b.normalized;
-        scProj = Vector2.Dot(bNorm, a);
-        Gizmos.DrawLine(a, b);
-        if (scProj < bNorm.magnitude)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(a,bNorm.magnitude);
-        }
-        else
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(a, bNorm.magnitude);
-        }
-       
+        bool inside = distance <= radius;
+        Gizmos.color = inside ? Color.green : Color.red;
+        Gizmos.DrawWireSphere(barrelPos, radius);
     }
 }

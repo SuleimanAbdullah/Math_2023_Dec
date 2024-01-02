@@ -20,7 +20,7 @@ public class Laser : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawLine(origin, hitInfo.point);
+                Gizmos.DrawLine(ray.origin, hitInfo.point);
                 Vector2 reflected = Reflect(ray.direction, hitInfo.normal);
                 Gizmos.DrawLine(hitInfo.point, (Vector2)hitInfo.point + reflected);
                 ray.direction = reflected;

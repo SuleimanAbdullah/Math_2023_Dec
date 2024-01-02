@@ -112,6 +112,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &118318088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118318089}
+  - component: {fileID: 118318090}
+  m_Layer: 0
+  m_Name: Transformation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &118318089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118318088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &118318090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118318088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07aa9d68a4167ad46a39e1409a872e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldCoord: {x: -0.31, y: -0.48}
+  localCoord: {x: -0.31, y: -0.48}
 --- !u!1 &345866511
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048664149}
   m_Layer: 0
-  m_Name: B
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -446,7 +491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048664148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.604, y: 0.043, z: 0}
+  m_LocalPosition: {x: 0.509, y: -0.485, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1935583910}
@@ -645,7 +690,7 @@ GameObject:
   - component: {fileID: 1471315281}
   - component: {fileID: 1471315280}
   m_Layer: 0
-  m_Name: A
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -663,8 +708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503985287aa195f4ba68281a64339351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A: {fileID: 1471315281}
-  B: {fileID: 1048664149}
+  enemy: {fileID: 1048664149}
+  radius: 1
 --- !u!4 &1471315281
 Transform:
   m_ObjectHideFlags: 0
@@ -829,7 +874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1915928540
 Transform:
   m_ObjectHideFlags: 0
